@@ -40,3 +40,7 @@ npm run lint
 - **Notes model:** monthly notes are keyed by `YYYY-MM`; range notes are keyed by `start_end` date keys
 - **Persistence scope:** all notes persist per browser via `localStorage`
 - **Touch support:** large day hit-targets and vertically stacked notes on mobile
+
+## Deployment
+ 
+ - **Vercel:** The product is deployed on vercel - [https://calender-tuf-red.vercel.app/](https://calender-tuf-red.vercel.app/)
