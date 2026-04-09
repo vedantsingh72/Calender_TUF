@@ -3,8 +3,11 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wall calendar",
+  title: "Wall Calendar",
   description: "Interactive wall calendar with notes, ranges, and holidays.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

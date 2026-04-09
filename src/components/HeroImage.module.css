@@ -55,3 +55,20 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 640px) {
+  .heroImage {
+    /* Reduce vertical dominance on mobile */
+    min-height: 160px;
+    height: 160px;
+    border-radius: 12px;
+  }
+
+  .overlay {
+    padding: 12px;
+  }
+
+  .overlay h2 {
+    font-size: 1.18rem;
+  }
+}

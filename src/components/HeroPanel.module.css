@@ -16,3 +16,18 @@
   font-size: 0.83rem;
   color: var(--muted);
 }
+
+@media (max-width: 640px) {
+  .heroPanel {
+    padding: 12px;
+  }
+
+  .rings {
+    margin-bottom: 10px;
+  }
+
+  .caption {
+    font-size: 0.78rem;
+    margin-top: 8px;
+  }
+}

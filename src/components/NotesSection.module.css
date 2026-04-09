@@ -170,3 +170,37 @@
     filter: brightness(1.05);
   }
 }
+
+@media (max-width: 640px) {
+  .tabBar {
+    gap: 10px;
+  }
+
+  .tab {
+    min-height: 44px;
+    padding: 12px 12px;
+    font-size: 0.88rem;
+    border-radius: 14px;
+  }
+
+  .panel {
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .panelMeta {
+    font-size: 0.7rem;
+  }
+
+  .field textarea {
+    min-height: 120px;
+    font-size: 0.95rem;
+  }
+
+  .saveButton {
+    min-height: 44px;
+    padding: 11px 16px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+}

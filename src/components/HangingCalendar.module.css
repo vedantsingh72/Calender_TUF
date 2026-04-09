@@ -92,7 +92,6 @@
 @media (max-width: 640px) {
   .calendarPaper {
     transform: none;
-    transform-style: preserve-3d;
-    width: min(98vw, 460px);
+    width: min(460px, 100%);
   }
 }

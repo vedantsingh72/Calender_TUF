@@ -35,6 +35,19 @@
     );
 }
 
+@media (max-width: 640px) {
+  .wall {
+    place-items: center;
+    padding: 40px 12px 20px;
+  }
+
+  /* Decorative “hanging” elements read as desktop framing on phones. */
+  .nail,
+  .hangerLine {
+    display: none;
+  }
+}
+
 /* Night wall: hero image at the back, then sampled tints from useDynamicTheme. */
 .dark {
   --bg-color: var(--wall-deep, #0f172a);

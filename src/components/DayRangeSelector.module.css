@@ -46,6 +46,24 @@
     transform 0.08s ease;
 }
 
+@media (max-width: 640px) {
+  .weekdays span {
+    font-size: 0.7rem;
+    padding: 6px 0;
+  }
+
+  .grid {
+    column-gap: 6px;
+    row-gap: 10px;
+  }
+
+  .dayCell {
+    /* Slightly bigger for thumbs without making grid cramped */
+    min-height: 46px;
+    border-radius: 12px;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .dayCell:not(:disabled):hover {
     transform: translateY(-1px);
