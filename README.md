@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Engineering Challenge - Interactive Wall Calendar
 
-## Getting Started
+A polished, responsive wall-calendar inspired React/Next.js component with:
 
-First, run the development server:
+- Physical wall-calendar visual style with top hero image
+- Interactive day range selection (start, end, in-between states)
+- Integrated notes (monthly notes + notes attached to selected ranges)
+- Mobile-first responsive behavior (single-column stack on smaller screens)
+- Creative extras: weekend highlighting, current-day marker, and Paper/Night theme toggle
+- Client-only persistence with `localStorage` (no backend)
+
+## Tech Stack
+
+- Next.js (App Router)
+- React + TypeScript
+- CSS Modules
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000).
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Product/UX Decisions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Range selection UX:** first click sets start, second click sets end, third click begins a new range
+- **Range correction:** selecting a date before the start automatically swaps start/end for expected behavior
+- **Notes model:** monthly notes are keyed by `YYYY-MM`; range notes are keyed by `start_end` date keys
+- **Persistence scope:** all notes persist per browser via `localStorage`
+- **Touch support:** large day hit-targets and vertically stacked notes on mobile

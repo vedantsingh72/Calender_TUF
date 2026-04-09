@@ -1,0 +1,18 @@
+.heroPanel {
+  border-bottom: 1px solid var(--line);
+  padding: 14px;
+}
+
+.rings {
+  height: 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  background: repeating-linear-gradient(90deg, #1e293b 0 4px, transparent 4px 13px);
+  opacity: 0.75;
+}
+
+.caption {
+  margin: 10px 2px 0;
+  font-size: 0.83rem;
+  color: var(--muted);
+}

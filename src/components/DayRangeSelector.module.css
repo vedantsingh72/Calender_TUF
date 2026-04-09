@@ -1,0 +1,183 @@
+.wrap {
+  margin-bottom: 4px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin-bottom: 8px;
+}
+
+.weekdays span {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 4px 0;
+  letter-spacing: 0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  column-gap: 5px;
+  row-gap: 8px;
+  touch-action: pan-y;
+}
+
+.dayCell {
+  position: relative;
+  z-index: 0;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.12s ease,
+    color 0.48s ease,
+    border-color 0.48s ease,
+    transform 0.08s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dayCell:not(:disabled):hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  }
+}
+
+.dayCell:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.dayNum {
+  position: relative;
+  z-index: 1;
+}
+
+.holiday {
+  border-color: color-mix(in srgb, var(--holiday-accent) 68%, var(--line));
+  background: var(--holiday-surface);
+}
+
+.holidayDot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--holiday-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--holiday-accent) 28%, transparent);
+}
+
+.noteSticky {
+  position: absolute;
+  bottom: 3px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--note-sticky-bg);
+  border: 1px solid var(--note-sticky-border);
+  transform: rotate(-9deg);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.noteFold {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-top: 4px solid var(--note-sticky-fold);
+}
+
+.outsideMonth {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.today:not(.inRangeRun):not(.pendingStart) {
+  outline: 2px dashed color-mix(in srgb, var(--accent) 65%, var(--text));
+  outline-offset: -3px;
+}
+
+/* Choosing end date — clear pending highlight */
+.pendingStart {
+  z-index: 2;
+  background: var(--accent);
+  color: var(--accent-contrast, #ffffff);
+  border-color: transparent;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* Continuous range “bar” */
+.inRangeRun.joinLeft {
+  margin-left: -3px;
+  padding-left: 3px;
+}
+
+.inRangeRun.joinRight {
+  margin-right: -3px;
+  padding-right: 3px;
+}
+
+.inRangeRun {
+  z-index: 1;
+  border-color: transparent;
+}
+
+.rangeMiddle {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-radius: 0;
+}
+
+.rangeEndpoint {
+  background: var(--accent);
+  color: var(--accent-contrast, #ffffff);
+}
+
+.rangeEndpoint .holidayDot,
+.pendingStart .holidayDot {
+  background: var(--accent-contrast, #ffffff);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--accent-contrast, #ffffff) 35%, transparent);
+}
+
+.rangeEndpoint .noteSticky,
+.pendingStart .noteSticky {
+  background: var(--accent-contrast, #ffffff);
+  border-color: var(--accent-contrast, #ffffff);
+}
+
+.rangeEndpoint .noteFold,
+.pendingStart .noteFold {
+  border-top-color: #e5e7eb;
+}
+
+.segmentLeft.rangeEndpoint,
+.segmentLeft.rangeMiddle {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.segmentRight.rangeEndpoint,
+.segmentRight.rangeMiddle {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Single-day range: both corners */
+.segmentLeft.segmentRight {
+  border-radius: 10px;
+}

@@ -1,0 +1,16 @@
+.perspective {
+  perspective: 1500px;
+  perspective-origin: 50% 32%;
+}
+
+.flipInner {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .perspective {
+    perspective-origin: 50% 28%;
+  }
+}
